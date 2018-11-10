@@ -6,7 +6,7 @@
       <v-spacer></v-spacer>
       <v-btn flat to='/home'>Home</v-btn>
       <v-btn flat to='/reservations'>Reservations</v-btn>
-      <v-btn flat to='/account'>My Account</v-btn>
+      <v-btn flat to='/customer'>My Account</v-btn>
       <v-btn flat to='/help'>Help</v-btn>
 
       </v-toolbar>

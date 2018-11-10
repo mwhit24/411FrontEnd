@@ -4,7 +4,7 @@
       :src="require('../assets/fracture.jpg')"
       dark
       alt = "background image"
-      height = 1000
+      height = 600
     >
     <v-container justify-center align-center>
 
@@ -13,11 +13,9 @@
     <p>We are glad that you chose to use Hotelify for your hotel management needs. We have many options available, and they are located in the toolbar.
       If you have any questions, let our team know. Thank you for using Hotelify!</p>
 
-    </v-card>
   </v-container>
 </v-parallax>
   </v-app>
-</body>
 </template>
 
 <script>

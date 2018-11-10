@@ -4,7 +4,7 @@
       :src="require('../assets/fracture.jpg')"
       dark
       alt = "background image"
-      height = 1000
+      height = 600
     >
     <v-container>
       <v-toolbar dark color="#FF5722">
