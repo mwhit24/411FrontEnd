@@ -1,24 +1,33 @@
 <template>
   <v-app>
+    <v-parallax
+      :src="require('../assets/fracture.jpg')"
+      dark
+      alt = "background image"
+      height = 1000
+    >
     <v-container>
-      <v-toolbar dark color="cyan">
+      <v-toolbar dark color="#FF5722">
         <v-toolbar-title>Reservations</v-toolbar-title>
       </v-toolbar>
 
     <v-form ref="form" v-model="valid" lazy validation>
       <v-text-field
+      dark
       v-model="firstname"
       :rules="rulesForFirstName"
       label="First Name"
       required>
     </v-text-field>
     <v-text-field
+    dark
     v-model="lastname"
     :rules="rulesForLastName"
     label="Last Name"
     required>
   </v-text-field>
     <v-text-field
+    dark
     v-model="phonenumber"
     :rules="rulesForPhone"
     label="Phone Number"
@@ -26,6 +35,7 @@
   </v-text-field>
   </v-form>
   <v-menu
+    dark
     ref="menu"
     :close-on-content-click="false"
     v-model="menu"
@@ -42,11 +52,12 @@
     prepend-icon="event"
     readonly>
   </v-text-field>
-  <v-date-picker v-model="date" @input="menu = false">
+  <v-date-picker dark v-model="date" @input="menu = false">
     <v-spacer></v-spacer>
   </v-date-picker>
 </v-menu>
 <v-menu
+  dark
   ref="menu2"
   :close-on-content-click="false"
   v-model="menu2"
@@ -63,12 +74,13 @@
   prepend-icon="event"
   readonly>
 </v-text-field>
-<v-date-picker v-model="date2" @input="menu2 = false">
+<v-date-picker dark v-model="date2" @input="menu2 = false">
   <v-spacer></v-spacer>
 </v-date-picker>
 </v-menu>
-<v-btn dark color="cyan">Confirm reservation</v-btn>
+<v-btn dark color="#FF5722">Confirm reservation</v-btn>
 </v-container>
+</v-parallax>
   </v-app>
 </template>
 
@@ -92,7 +104,8 @@ export default {
     date2: new Date().toISOString().substr(0,10),
     menu: false,
     modal: false,
-    menu2: false
+    menu2: false,
+    dark: true
     }),
   }
 </script>

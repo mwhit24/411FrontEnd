@@ -1,5 +1,11 @@
 <template>
   <v-app>
+    <v-parallax
+      :src="require('../assets/fracture.jpg')"
+      dark
+      alt = "background image"
+      height = 1000
+    >
     <v-container justify-center align-center>
 
     <h3><strong>Welcome to Hotelify!</strong></h3>
@@ -9,7 +15,7 @@
 
     </v-card>
   </v-container>
-
+</v-parallax>
   </v-app>
 </body>
 </template>
