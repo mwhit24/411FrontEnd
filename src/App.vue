@@ -7,7 +7,6 @@
       <v-btn flat to='/reservations'>Reservations</v-btn>
       <v-btn flat to='/account'>My Account</v-btn>
       <v-btn flat to='/help'>Help</v-btn>
-
       </v-toolbar>
       <router-view/>
   </v-app>
