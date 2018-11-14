@@ -6,7 +6,9 @@
       alt = "background image"
       height = 600
     >
-    <v-layout row justify-center>
+    <v-container>
+    <v-layout justify-center align-center>
+    <h1 class="text-xs-center display-3 font-weight-light mb-1">Update Customer Information</h1>
     <v-dialog v-model="dialog" persistent max-width="600px">
       <v-btn slot="activator" color="#FF5722" dark>Update Name</v-btn>
       <v-card>
@@ -32,9 +34,7 @@
         </v-card-actions>
         </v-card>
       </v-dialog>
-    </v-layout>
 
-    <v-layout row justify-center>
     <v-dialog v-model="dialog1" persistent max-width="600px">
       <v-btn slot="activator" color="#FF5722" dark>Update Email</v-btn>
       <v-card>
@@ -57,9 +57,8 @@
         </v-card-actions>
         </v-card>
       </v-dialog>
-    </v-layout>
 
-    <v-layout row justify-center>
+
     <v-dialog v-model="dialog2" persistent max-width="600px">
       <v-btn slot="activator" color="#FF5722" dark>Update Phone Number</v-btn>
       <v-card>
@@ -82,9 +81,7 @@
         </v-card-actions>
         </v-card>
       </v-dialog>
-    </v-layout>
 
-    <v-layout row justify-center>
     <v-dialog v-model="dialog3" persistent max-width="600px">
       <v-btn slot="activator" color="#FF5722" dark>Update Password</v-btn>
       <v-card>
@@ -108,9 +105,45 @@
           <v-btn color="#FF5722" flat @click.native="dialog3 = false">Close</v-btn>
           <v-btn color="#FF5722" flat @click.native="dialog3 = false">Save</v-btn>
         </v-card-actions>
+      </v-card>
+    </v-dialog>
+
+        <v-dialog v-model="dialog4" persistent max-width="600px">
+          <v-btn slot="activator" color="#FF5722" dark>Update Address</v-btn>
+          <v-card>
+            <v-card-title>
+              <span class="headline">Address</span>
+            </v-card-title>
+            <v-card-text>
+              <v-container grid-list-md>
+                <v-layout wrap>
+                  <v-flex xs12 sm6 md4>
+                    <v-text-field label="Street Address"></v-text-field>
+                  </v-flex>
+                  <v-flex xs12 sm6 md4>
+                    <v-text-field label="City"></v-text-field>
+                  </v-flex>
+                  <v-flex xs12 sm6 md4>
+                    <v-text-field label="State"></v-text-field>
+                  </v-flex>
+                  <v-flex xs12 sm6 md4>
+                    <v-text-field label="Zip Code"></v-text-field>
+                  </v-flex>
+                </v-layout>
+              </v-container>
+            </v-card-text>
+            <v-card-actions>
+              <v-spacer></v-spacer>
+              <v-btn color="#FF5722" flat @click.native="dialog4 = false">Close</v-btn>
+              <v-btn color="#FF5722" flat @click.native="dialog4 = false">Save</v-btn>
+            </v-card-actions>
+            </v-card>
+          </v-dialog>
+
         </v-card>
      </v-dialog>
     </v-layout>
+  </v-container>
   </v-parallax>
 </v-app>
 </template>
@@ -122,10 +155,12 @@ data: () => ({
   dialog1: false,
   dialog2: false,
   dialog3: false,
+  dialog4: false,
   })
 }
 </script>
 
 <style scoped>
+
 
 <style>
