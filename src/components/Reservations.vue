@@ -80,6 +80,15 @@
   <v-spacer></v-spacer>
 </v-date-picker>
 </v-menu>
+<v-flex xs12>
+        <v-combobox
+          v-model="select"
+          dark
+          :items="items"
+          color='white'
+          label="Select a room number"
+        ></v-combobox>
+      </v-flex>
 <v-alert
 v-model="alert"
 dismissible
@@ -119,6 +128,10 @@ export default {
     menu2: false,
     dark: true,
     alert: false,
+    select: '',
+    items: [
+          'List of rooms available for this dates',
+          ]
     }),
   }
 </script>
