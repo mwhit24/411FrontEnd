@@ -4,7 +4,7 @@
       :src="require('../assets/fracture.jpg')"
       dark
       alt = "background image"
-      height = 1000
+      height = 600
     >
     <v-container>
       <v-toolbar dark color="#FF5722">
@@ -17,21 +17,21 @@
       v-model="firstname"
       :rules="rulesForFirstName"
       label="First Name"
-      required>
+      required color='white'>
     </v-text-field>
     <v-text-field
     dark
     v-model="lastname"
     :rules="rulesForLastName"
     label="Last Name"
-    required>
+    required color='white'>
   </v-text-field>
     <v-text-field
     dark
     v-model="phonenumber"
     :rules="rulesForPhone"
     label="Phone Number"
-    required>
+    required color='white'>
   </v-text-field>
   </v-form>
   <v-menu
@@ -42,10 +42,11 @@
     :nudge-right="50"
     lazy
     transition="scale-transition"
-    offset-x
+    offset-y
     full-width
     min-width="300px">
     <v-text-field
+    dark
     slot="activator"
     v-model="date"
     label="Choose a Check-In Date"
@@ -64,10 +65,11 @@
   :nudge-right="50"
   lazy
   transition="scale-transition"
-  offset-x
+  offset-y
   full-width
   min-width="300px">
   <v-text-field
+  dark
   slot="activator"
   v-model="date2"
   label="Choose a Check-Out Date"
@@ -78,7 +80,26 @@
   <v-spacer></v-spacer>
 </v-date-picker>
 </v-menu>
-<v-btn dark color="#FF5722">Confirm reservation</v-btn>
+<v-flex xs12>
+        <v-combobox
+          v-model="select"
+          dark
+          :items="items"
+          color='white'
+          label="Select a room number"
+        ></v-combobox>
+      </v-flex>
+<v-alert
+v-model="alert"
+dismissible
+type="success"
+color='#FF5722'
+    >
+      You have confirmed your reservation.
+    </v-alert>
+<v-btn dark color="#FF5722"
+      v-if="!alert"
+      @click="alert = true">Confirm reservation</v-btn>
 </v-container>
 </v-parallax>
   </v-app>
@@ -105,7 +126,12 @@ export default {
     menu: false,
     modal: false,
     menu2: false,
-    dark: true
+    dark: true,
+    alert: false,
+    select: '',
+    items: [
+          'List of rooms available for this dates',
+          ]
     }),
   }
 </script>
