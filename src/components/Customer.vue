@@ -11,10 +11,17 @@
               <v-combobox
                 v-model="select"
                 dark
-                :items="items"
+                :items="names"
                 color='white'
-                label="Choose guest name"
+                label="Choose Guest Name:"
+                placeholder="ID Firstname Lastname"
+                @click="populateNames"
+                @change="extractID"
               ></v-combobox>
+              <!--<select required id="guestDropDown">
+                <option>Select here</option>
+                <option v-for="guest in guests">{{ guest.first_name }}</option>
+              </select>!-->
             </v-flex>
     <v-layout justify-center align-center>
 
@@ -29,10 +36,10 @@
           <v-container grid-list-md>
             <v-layout wrap>
               <v-flex xs12 sm6 md4>
-                <v-text-field label="First name"></v-text-field>
+                <v-text-field placeholder="First Name" label="First name" v-model="fname"></v-text-field>
               </v-flex>
               <v-flex xs12 sm6 md4>
-                <v-text-field label="Last name"></v-text-field>
+                <v-text-field placeholder="Last Name" label="Last name" v-model="lname" @change="showSelect"></v-text-field>
               </v-flex>
             </v-layout>
           </v-container>
@@ -40,7 +47,7 @@
         <v-card-actions>
           <v-spacer></v-spacer>
           <v-btn color="#FF5722" flat @click.native="dialog = false">Close</v-btn>
-          <v-btn color="#FF5722" flat @click.native="dialog = false">Save</v-btn>
+          <v-btn color="#FF5722" flat @click.native="dialog = false" @click="updateName(currentID,fname,lname)">Save</v-btn>
         </v-card-actions>
         </v-card>
       </v-dialog>
@@ -157,6 +164,7 @@
 </template>
 
 <script>
+import axios from "axios"
 export default {
 data: () => ({
   dialog: false,
@@ -165,10 +173,61 @@ data: () => ({
   dialog3: false,
   dialog4: false,
   select: '',
-  items: [
-        'List of guests',
-        ]
-  })
+  fname: '',
+  lname: '',
+  currentID: 0,
+  names: [
+
+      ],
+  guests: [
+
+      ],
+  }),
+  mounted() {
+          axios.get('http://localhost:3000/api/Guests').then(response => {
+            this.guests = [...response.data]
+          })
+        },
+  methods: {
+    populateNames(){
+      this.names = [];
+      this.guests.forEach((guest)=>{
+        this.names.push(guest.id+" "+guest.first_name +" " +guest.last_name);
+      })
+      console.log(this.names);
+    },
+    showSelect(){
+      console.log(this.fname +" "+ this.lname);
+    },
+    extractID(guestStr){
+      this.currentID = parseInt(guestStr,10);
+      console.log(this.currentID);
+    },
+    updateName(id,first,last){
+      let tempG  = {};
+    axios.get('http://localhost:3000/api/Guests/'+id).then(response => {
+        tempG = response.data;
+      });
+      tempG.first_name = first;
+      tempG.last_name = last;
+      axios.put('http://localhost:3000/api/Guests/'+id, JSON.stringify({
+        "first_name": tempG.first_name,
+        "last_name": tempG.last_name,
+        "address": tempG.address,
+        "state": tempG.state,
+        "city": tempG.city,
+        "country": tempG.country,
+        "phone_number": tempG.phone_number,
+      })
+      )
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+    },
+  },
 }
 </script>
 
