@@ -139,9 +139,6 @@
             </v-card-actions>
             </v-card>
           </v-dialog>
-
-        </v-card>
-     </v-dialog>
     </v-layout>
   </v-container>
   </v-parallax>
