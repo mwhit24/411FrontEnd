@@ -1,6 +1,5 @@
 <template>
   <v-app>
-<<<<<<< HEAD
     <v-card>
       <v-form ref="form" v-model="valid" lazy validation>
         <v-text-field
@@ -12,7 +11,6 @@
         </v-text-field>
       </v-form>
     </v-card>
-=======
     <v-parallax
       :src="require('../assets/fracture.jpg')"
       dark
@@ -115,7 +113,6 @@ color='#FF5722'
       @click="alert = true">Confirm reservation</v-btn>
 </v-container>
 </v-parallax>
->>>>>>> dd159b8dc4cc1f3a2d0573cebfc2ab5acba2c547
   </v-app>
 </template>
 
