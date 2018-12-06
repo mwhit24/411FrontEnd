@@ -7,7 +7,17 @@
       height = 600
     >
     <v-container>
+      <v-flex xs12>
+              <v-combobox
+                v-model="select"
+                dark
+                :items="items"
+                color='white'
+                label="Choose guest name"
+              ></v-combobox>
+            </v-flex>
     <v-layout justify-center align-center>
+
     <h1 class="text-xs-center display-3 font-weight-light mb-1">Update Customer Information</h1>
     <v-dialog v-model="dialog" persistent max-width="600px">
       <v-btn slot="activator" color="#FF5722" dark>Update Name</v-btn>
@@ -138,10 +148,8 @@
               <v-btn color="#FF5722" flat @click.native="dialog4 = false">Save</v-btn>
             </v-card-actions>
             </v-card>
-          </v-dialog>
+        </v-dialog>
 
-        </v-card>
-     </v-dialog>
     </v-layout>
   </v-container>
   </v-parallax>
@@ -156,6 +164,10 @@ data: () => ({
   dialog2: false,
   dialog3: false,
   dialog4: false,
+  select: '',
+  items: [
+        'List of guests',
+        ]
   })
 }
 </script>

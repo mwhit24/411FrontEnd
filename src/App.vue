@@ -6,9 +6,11 @@
       <v-spacer></v-spacer>
       <v-btn flat to='/home'>Home</v-btn>
       <v-btn flat to='/reservations'>Reservations</v-btn>
-      <v-btn flat to='/customer'>My Account</v-btn>
+      <v-btn flat to='/customer'>Guest</v-btn>
       <v-btn flat to='/help'>Help</v-btn>
+
       <v-btn flat to='/exit'>Logout</v-btn>
+
       </v-toolbar>
       <router-view/>
 

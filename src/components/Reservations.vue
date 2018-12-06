@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-card>
+  <!--  <v-card>
       <v-form ref="form" v-model="valid" lazy validation>
         <v-text-field
           v-model="name"
@@ -10,7 +10,7 @@
           required>
         </v-text-field>
       </v-form>
-    </v-card>
+    </v-card>-->
     <v-parallax
       :src="require('../assets/fracture.jpg')"
       dark
@@ -68,7 +68,7 @@
     <v-spacer></v-spacer>
   </v-date-picker>
 </v-menu>
-<v-menu
+<v-menu>
   dark
   ref="menu2"
   :close-on-content-click="false"
@@ -117,6 +117,7 @@ color='#FF5722'
 </template>
 
 <script>
+import axios from 'axios'
 export default {
   data: ()=> ({
     valid: true,
