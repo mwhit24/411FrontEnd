@@ -20,15 +20,16 @@
       <v-card-text>
         <h1 class="title font-weight-medium text-capitalize text-style-underline">About Us:</h1>
         <p class="subheading font-weight-regular">
-          We at Hotelify pride ourselves in providing the highest quality rooms on this side of the Mississippi River.<br/>
+          We, the Hotelify team, pride ourselves in providing the most cutting edge web-based hotel management software.<br/>
           Your satisfaction is guaranteed!
         </p>
         <hr/>
       </v-card-text>
       <v-card-text>
         <h1 class="title font-weight-medium text-capitalize text-style-underline">Contact Us:</h1>
-        <p class="subheading font-weight-regular">Phone:</p>
-        <p class="subheading font-weight-regular">Address:</p>
+        <p class="subheading font-weight-regular">Phone: 601-555-1234</p>
+        <p class="subheading font-weight-regular">E-Mail: hotelify-team@coders.arpa</p>
+        <p class="subheading font-weight-regular">Address: 118 College Dr. Hattiesburg, MS, 39406</p>
         <hr/>
       </v-card-text>
     </v-layout>
