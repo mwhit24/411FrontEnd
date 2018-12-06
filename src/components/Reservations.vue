@@ -84,9 +84,11 @@
         <v-combobox
           v-model="select"
           dark
-          :items="items"
+          :items="rooms"
           color='white'
           label="Select a room number"
+          placeholder="RoomID Room# Style Price Location"
+          @click="populateRooms"
         ></v-combobox>
       </v-flex>
 <v-alert
@@ -130,12 +132,24 @@ export default {
     dark: true,
     alert: false,
     select: '',
-    items: [
-          'List of rooms available for this dates',
-          ]
+    items: [],
+    rooms: []
     }),
-
-  }
+    mounted() {
+            axios.get('http://localhost:3000/api/Rooms').then(response => {
+              this.items = [...response.data]
+            })
+          },
+          methods: {
+            populateRooms(){
+              this.rooms = [];
+              this.items.forEach((room)=>{
+                this.rooms.push(room.id+" : Room "+room.room_number +" "+ room.room_type +" $"+ room.current_price +"/night "+ room.location);
+              })
+              console.log(this.names);
+            },
+          }
+        }
 </script>
 
 <style scoped>
