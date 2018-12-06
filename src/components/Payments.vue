@@ -7,6 +7,9 @@
       height = 600
     >
     <v-container>
+      <v-card-text class="display-2">
+        This page is not yet fully implemented.
+      </v-card-text>
       <v-data-table
     v-model="selected"
     :headers="headers"
@@ -112,7 +115,7 @@
         },
         {
           value: false,
-          name: 'Stanky Leg',
+          name: 'Mister Leg',
           totalAmount: 750.76,
           amountPaid: 560.87,
           chargeDate: '01/01/2019',
