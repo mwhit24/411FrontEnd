@@ -7,8 +7,11 @@
       height = 600
     >
     <v-container>
-      <v-card-text class="display-2">
+      <v-card-text class="display-1">
         This page is not yet fully implemented.
+        <v-card-text class="headline">
+          Data may be inconsistent.
+        </v-card-text>
       </v-card-text>
       <v-data-table
     v-model="selected"
