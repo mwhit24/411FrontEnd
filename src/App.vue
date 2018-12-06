@@ -8,8 +8,11 @@
       <v-btn flat to='/reservations'>Reservations</v-btn>
       <v-btn flat to='/customer'>My Account</v-btn>
       <v-btn flat to='/help'>Help</v-btn>
+<<<<<<< HEAD
+=======
       <v-btn flat to='/exit'>Logout</v-btn>
 
+>>>>>>> dd159b8dc4cc1f3a2d0573cebfc2ab5acba2c547
       </v-toolbar>
       <router-view/>
 
