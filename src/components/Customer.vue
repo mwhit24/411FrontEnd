@@ -45,7 +45,7 @@
         </v-card>
       </v-dialog>
 
-    <v-dialog v-model="dialog1" persistent max-width="600px">
+    <!--<v-dialog v-model="dialog1" persistent max-width="600px">
       <v-btn slot="activator" color="#FF5722" dark>Update Email</v-btn>
       <v-card>
         <v-card-title>
@@ -66,7 +66,7 @@
           <v-btn color="#FF5722" flat @click.native="dialog1 = false">Save</v-btn>
         </v-card-actions>
         </v-card>
-      </v-dialog>
+      </v-dialog>-->
 
 
     <v-dialog v-model="dialog2" persistent max-width="600px">
@@ -167,8 +167,18 @@ data: () => ({
   select: '',
   items: [
         'List of guests',
-        ]
-  })
+      ],
+  guests: [
+
+  ],
+}),
+//methods: {
+  //mounted() {
+      //axios.get(url).then(response => {
+        //this.results = response.data
+      //}),
+  //  /},
+  //}/,
 }
 </script>
 

@@ -4,6 +4,7 @@ import Home from './components/Home.vue'
 import Reservations from './components/Reservations.vue'
 import Help from './components/Help.vue'
 import Customer from './components/Customer.vue'
+import Payments from './components/Payments.vue'
 
 Vue.use(Router)
 
@@ -31,5 +32,10 @@ export default new Router({
       name: 'customer',
       component: Customer
     },
+    {
+      path: '/payments',
+      name: 'payments',
+      component: Payments
+    }
   ]
 })
