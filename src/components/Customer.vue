@@ -173,7 +173,6 @@ data: () => ({
   dialog3: false,
   dialog4: false,
   select: '',
-<<<<<<< HEAD
   fname: '',
   lname: '',
   currentID: 0,
@@ -229,22 +228,6 @@ data: () => ({
       });
     },
   },
-=======
-  items: [
-        'List of guests',
-      ],
-  guests: [
-
-  ],
-}),
-//methods: {
-  //mounted() {
-      //axios.get(url).then(response => {
-        //this.results = response.data
-      //}),
-  //  /},
-  //}/,
->>>>>>> e36f0a1949404596d13deeae5f1f98ba7f70d467
 }
 </script>
 
