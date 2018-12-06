@@ -103,7 +103,7 @@
       <v-btn slot="activator" color="#FF5722" dark>Update Password</v-btn>
       <v-card>
         <v-card-title>
-          <span class="headline">Password</span>
+          <span class="headline">Password (Not Yet Implemented)</span>
         </v-card-title>
         <v-card-text>
           <v-container grid-list-md>
@@ -144,7 +144,7 @@
                     <v-text-field label="State"></v-text-field>
                   </v-flex>
                   <v-flex xs12 sm6 md4>
-                    <v-text-field label="Zip Code"></v-text-field>
+                    <v-text-field label="Country"></v-text-field>
                   </v-flex>
                 </v-layout>
               </v-container>
